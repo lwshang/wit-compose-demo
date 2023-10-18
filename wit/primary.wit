@@ -1,0 +1,6 @@
+package example:primary;
+
+world primary {
+  import example:secondary/foo;
+  export run: func()
+}

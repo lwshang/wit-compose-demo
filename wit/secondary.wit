@@ -1,0 +1,9 @@
+package example:secondary;
+
+interface foo {
+    bar: func() -> s64;
+}
+
+world secondary {
+    export foo;
+}
