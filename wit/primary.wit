@@ -2,5 +2,5 @@ package example:primary;
 
 world primary {
   import example:secondary/foo;
-  export double-bar: func() -> s64;
+  export bar: func() -> s64;
 }

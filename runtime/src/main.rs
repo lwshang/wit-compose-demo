@@ -12,13 +12,11 @@ where
     let engine = Engine::new(&config)?;
     let mut store: Store<()> = Store::new(&engine, ());
 
-    let linker = Linker::new(store.engine());
-
-    let module = Module::from_file(store.engine(), wasm_path)?;
-    let canister = linker.instantiate(&mut store, &module)?;
-
-    let double_bar = canister.get_typed_func::<(), i64>(&mut store, "double-bar")?;
-    let res = double_bar.call(&mut store, ())?;
+    let linker = component::Linker::new(&engine);
+    let com = component::Component::from_file(&engine, wasm_path)?;
+    let ins = linker.instantiate(&mut store, &com)?;
+    let bar = ins.get_typed_func::<(), (i64,)>(&mut store, "bar")?;
+    let (res,) = bar.call(&mut store, ())?;
     Ok(res)
 }
 

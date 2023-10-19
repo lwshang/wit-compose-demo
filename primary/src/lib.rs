@@ -9,7 +9,7 @@ wit_bindgen::generate!({
 struct Primary;
 
 impl Guest for Primary {
-    fn double_bar() -> i64 {
+    fn bar() -> i64 {
         example::secondary::foo::bar() * 2
     }
 }
