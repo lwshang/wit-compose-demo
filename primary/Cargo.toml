@@ -10,4 +10,3 @@ wit-bindgen = { git = "https://github.com/bytecodealliance/wit-bindgen", version
 
 [lib]
 crate-type = ["cdylib"]
-path = "lib.rs"

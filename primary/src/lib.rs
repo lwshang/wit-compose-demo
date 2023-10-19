@@ -1,6 +1,5 @@
 wit_bindgen::generate!({
     world: "primary",
-    path: "../wit/primary.wit",
 
     exports: {
         world: Primary,
@@ -10,7 +9,7 @@ wit_bindgen::generate!({
 struct Primary;
 
 impl Guest for Primary {
-    fn run() {
-        todo!()
+    fn double_bar() -> i64 {
+        example::secondary::foo::bar() * 2
     }
 }

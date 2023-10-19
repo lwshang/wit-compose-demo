@@ -1,3 +1,3 @@
 [workspace]
-members = ["primary", "secondary"]
+members = ["primary", "secondary", "runtime"]
 resolver = "2"

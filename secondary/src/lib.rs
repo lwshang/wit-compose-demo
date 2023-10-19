@@ -1,15 +1,16 @@
 wit_bindgen::generate!({
     world: "secondary",
-    path: "../wit/secondary.wit",
 
     exports: {
-        world: Secondary,
+        "example:secondary/foo" : Foo,
     },
 });
 
-struct Secondary;
+use exports::example::secondary::foo::Guest;
 
-impl Guest for Secondary {
+struct Foo;
+
+impl Guest for Foo {
     fn bar() -> i64 {
         42
     }
